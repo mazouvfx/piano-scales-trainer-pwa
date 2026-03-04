@@ -1,0 +1,52 @@
+/* Modern UI Tailwind-like */
+:root {
+  --bg-primary: #1f2937;
+  --bg-secondary: #374151;
+  --accent: #3b82f6;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --success: #10b981;
+  --danger: #ef4444;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 1rem; }
+
+header { text-align: center; padding: 2rem 1rem; background: linear-gradient(135deg, var(--accent), #1d4ed8); }
+
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+.btn { display: inline-block; padding: 1rem 2rem; margin: 0.5rem; border: none; border-radius: 0.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.3s; text-align: center; min-height: 3rem; }
+
+.btn-primary { background: var(--accent); color: var(--white); }
+.btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+
+.btn-secondary { background: var(--bg-secondary); color: var(--text-primary); }
+.btn-secondary:hover { background: #4b5563; }
+
+.btn-success { background: var(--success); color: var(--white); }
+.btn-danger { background: var(--danger); color: var(--white); }
+
+.card { background: var(--bg-secondary); border-radius: 1rem; padding: 2rem; margin: 1rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+
+#keyboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; padding: 1rem; background: #111; border-radius: 1rem; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+.key { height: 4rem; flex: 1; min-width: 3rem; border-radius: 0.25rem; cursor: pointer; transition: all 0.1s; position: relative; border: 2px solid transparent; font-size: 0.8rem; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 0.25rem; user-select: none; }
+
+.key.white { background: linear-gradient(#fff, #eee); color: #333; }
+.key.black { height: 2.5rem; background: linear-gradient(#333, #111); color: #fff; margin-top: 0.5rem; z-index: 2; flex: 0.7; font-weight: bold; }
+
+.key.active { transform: scale(0.95); box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+
+.key.playing { background: var(--accent) !important; box-shadow: 0 0 20px var(--accent); transform: scale(1.05); }
+
+#quiz-area, #learning-area { min-height: 400px; }
+
+.progress { background: var(--bg-secondary); border-radius: 9999px; height: 8px; overflow: hidden; margin: 1rem 0; }
+.progress-bar { height: 100%; background: var(--success); transition: width 0.3s; border-radius: 9999px; }
+
+@media (max-width: 768px) { .container { padding: 0.5rem; } h1 { font-size: 2rem; } #keyboard { gap: 1px; } .key { height: 3rem; min-width: 2.5rem; font-size: 0.7rem; } }
